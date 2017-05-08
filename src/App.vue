@@ -14,4 +14,7 @@ export default {
 <style>
 @import '~normalize.css';
 @import '~vue-material/dist/vue-material.css';
+ body{
+    /*background-color: #eee!important;*/
+  }
 </style>

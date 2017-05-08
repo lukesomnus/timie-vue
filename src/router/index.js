@@ -4,6 +4,9 @@ import Home from '@/components/Home'
 import Plugin from '@/components/plugins/Plugin'
 import Todo from '@/components/plugins/Todo'
 import TimeNote from '@/components/plugins/TimeNote'
+import Tomato from '@/components/plugins/Tomato'
+import AnnualPlan from '@/components/plugins/AnnualPlan'
+import Birthday from '@/components/plugins/Birthday'
 Vue.use(Router)
 
 export default new Router({
@@ -27,7 +30,23 @@ export default new Router({
           path:'timenote',
           name:'timenote',
           component:TimeNote
+        },
+        {
+          path:'tomato',
+          name:'tomato',
+          component:Tomato
+        },
+        {
+          path:'annualPlan',
+          name:'annualPlan',
+          component:AnnualPlan
+        },
+        {
+          path:'birthday',
+          name:'birthday',
+          component:Birthday
         }
+        
       ]
     },
   ]
