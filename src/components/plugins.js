@@ -42,6 +42,6 @@ const plugins = [{
   name: '艾宾浩斯记忆曲线',
   icon: 'timeline',
   desc: '根据艾宾浩斯记忆曲线来复习知识',
-  link: 'timeline'
+  link: 'rememberCurve'
 }]
 export default plugins
