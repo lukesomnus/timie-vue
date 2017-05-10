@@ -65,7 +65,6 @@
     margin: 0 100px;
   }
 
-
   .birthday-card {
     background-color: #65adb7;
     padding: 20px;

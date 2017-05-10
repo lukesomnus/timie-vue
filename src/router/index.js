@@ -8,6 +8,7 @@ import Tomato from '@/components/plugins/Tomato'
 import AnnualPlan from '@/components/plugins/AnnualPlan'
 import Birthday from '@/components/plugins/Birthday'
 import RememberCurve from '@/components/plugins/RememberCurve'
+
 Vue.use(Router)
 
 export default new Router({

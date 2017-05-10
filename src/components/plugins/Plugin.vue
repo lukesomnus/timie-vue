@@ -3,7 +3,7 @@
   <md-layout md-gutter class="container">
     <md-layout md-flex="20">
       <md-whiteframe md-elevation="2" class="plugin-nav">
-        <md-list>
+        <md-list :style="{height:navHeight+'px'}">
           <md-list-item v-for="plugin in plugins" :key="plugin.id">
             <router-link :to="plugin.link">
               <md-icon>{{plugin.icon}}</md-icon>
@@ -26,8 +26,12 @@
     name: 'plugin',
     data() {
       return {
-        plugins
+        plugins,
+        navHeight:0
       }
+    },
+    created(){
+      this.navHeight = window.innerHeight-150
     }
   }
 
@@ -40,7 +44,6 @@
     -webkit-margin-end: 0px;
   }
 
-  .container {}
 
   .plugin-container {
     /*margin: 20px 100px 0 0;*/
@@ -49,6 +52,7 @@
 
   .plugin-nav {
     width: 90%;
+    background-color: #fff;
   }
 
 </style>

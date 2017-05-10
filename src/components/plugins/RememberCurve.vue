@@ -15,6 +15,12 @@
       </md-layout>
     </md-layout>
     <div>当前时间：{{now}}</div>
+    <div>
+      今天的任务：{{todayRemember}}
+    </div>
+    <div>
+      明天的任务：{{tomorrowRemember || '无'}}
+    </div>
     <div v-for="(value, key) in timeline" :key="key">
       {{key}}:{{value}}
     </div>
@@ -23,11 +29,12 @@
 <script>
   import moment from 'moment';
   import uuid from 'uuid/v1';
-  import {
+  import local from '@/utils/localStorage'
+  let {
     saveLocal,
-    getLocal
-  } from '@/utils/localStorage'
-
+    getLocal,
+    removeLocal
+  } = local('rememberCurve')
   export default {
     name: 'rememberCurve',
     data() {
@@ -36,6 +43,8 @@
         rememberContent: '',
         remembers: [],
         timeline: null,
+        todayRemember: '',
+        tomorrowRemember: ''
       }
     },
     created() {
@@ -58,23 +67,36 @@
           rememberDays: EbbinghausCurve(now)
         }
         this.remembers.push(data);
-        saveLocal('rememberCurve', {
+        saveLocal({
           remembers: this.remembers
         })
         this.timeline = RemembersMerge(this.remembers)
       },
       getRemembers() {
-        const remembers = getLocal('rememberCurve').remembers
+        const remembers = getLocal().remembers
         if (!remembers) return
         this.remembers = remembers
         this.timeline = RemembersMerge(remembers)
+        const today = moment().format("YYYY-MM-DD")
+        const tomorrow = moment().add(1, 'days').format("YYYY-MM-DD")
+        if (this.timeline[today]) {
+          this.todayRemember = this.timeline[today]
+
+          delete this.timeline[today]
+          // console.log(this.timeline)
+        }
+        if (this.timeline[tomorrow]) {
+          this.tomorrowRemember = this.timeline[tomorrow]
+
+          delete this.timeline[tomorrow]
+        }
       }
     }
   }
 
 
   const curveDays = [{
-    number: 1,
+    number: 0,
     type: 'days'
   }, {
     number: 2,

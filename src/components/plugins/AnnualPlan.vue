@@ -54,12 +54,10 @@
 <script>
   import uuid from 'uuid/v1';
   import myDatepicker from 'vue-datepicker/vue-datepicker-es6'
-  import {
-    saveLocal,
-    getLocal
-  } from '@/utils/localStorage'
-
+  import local from '@/utils/localStorage'
   const LOCAL_PLANS = 'LOCAL_PLAN'
+  let {saveLocal,getLocal,removeLocal}  = local(LOCAL_PLANS)
+
   export default {
     name: 'annualPlan',
     data() {
@@ -74,7 +72,7 @@
       }
     },
     created() {
-      this.plans = getLocal(LOCAL_PLANS).plans || []
+      this.plans = getLocal().plans || []
     },
     methods: {
       addPlan() {
@@ -85,7 +83,7 @@
           deadline: this.planDeadline,
           progress: 0,
         })
-        saveLocal(LOCAL_PLANS, {
+        saveLocal( {
           plans: this.plans
         })
       },

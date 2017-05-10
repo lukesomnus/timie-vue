@@ -14,7 +14,8 @@ export default {
 <style>
 @import '~normalize.css';
 @import '~vue-material/dist/vue-material.css';
- body{
-    /*background-color: #eee!important;*/
+ :global(body){
+    background-color: #eee !important;
+    overflow-x: hidden;
   }
 </style>
