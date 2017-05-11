@@ -20,9 +20,9 @@
                 </md-input-container>
               </md-layout>
               <md-layout md-flex="30" class="use-time">
-                <md-input-container>
+                <md-input-container :class="{'md-input-invalid':isTimeInputErrorMsg}">
                   <md-input type="number" placeholder="用时（h）" v-model.trim="thingTimeInputVal"></md-input>
-                  <!--<span class="md-error">Validation message</span>-->
+                  <span class="md-error" v-show="isTimeInputErrorMsg">一天只有24小时哦！</span>
                 </md-input-container>
               </md-layout>
             </md-layout>
@@ -36,9 +36,9 @@
           </md-layout>
           <md-layout md-column md-gutter md-flex="20">
             <!--<md-layout>-->
-              <md-button class="md-raised md-primary add-btn" @click.native="addTimenote" :disabled="thingContentInputVal.length===0">
-                <md-icon>add</md-icon>
-              </md-button>
+            <md-button class="md-raised md-primary add-btn" @click.native="addTimenote" :disabled="thingContentInputVal.length===0">
+              <md-icon>add</md-icon>
+            </md-button>
             <!--</md-layout>-->
           </md-layout>
         </md-layout>
@@ -116,7 +116,11 @@
   import uuid from 'uuid/v1';
   import PieChart from '@/components/tools/Echarts/Pie'
   import local from '@/utils/localStorage'
-  let {saveLocal,getLocal,removeLocal}  = local('timenotes')
+  let {
+    saveLocal,
+    getLocal,
+    removeLocal
+  } = local('timenotes')
   export default {
     name: 'timenote',
     data() {
@@ -127,6 +131,7 @@
         thingContentInputVal: '',
         thingTimeInputVal: '',
         selectedOne: '',
+        isTimeInputErrorMsg: false,
         tags: [{
             id: uuid(),
             text: '工作'
@@ -205,7 +210,7 @@
 
       saveTimenotes() {
         removeLocal()
-        console.log(this.tags)        
+        console.log(this.tags)
         saveLocal({
           timenotes: this.timenotes,
           tags: this.tags
@@ -216,7 +221,7 @@
         this.timenotes.forEach(note => note.usage === type && (totalTime += parseInt(note.time)))
         return totalTime + 'h'
       },
-       getTags() {
+      getTags() {
         const tags = getLocal() && getLocal().tags || []
         return tags
       },
@@ -244,6 +249,18 @@
       },
       close(ref) {
         console.log('Closed: ' + ref);
+      }
+    },
+    watch: {
+      thingTimeInputVal(newVal) {
+        console.log(this.isTimeInputErrorMsg )
+        if (!newVal) return
+        if (newVal > 24) {
+          this.thingTimeInputVal = ''
+          this.isTimeInputErrorMsg = true
+        } else {
+          this.isTimeInputErrorMsg = false
+        }
       }
     },
     components: {

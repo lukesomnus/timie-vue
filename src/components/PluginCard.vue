@@ -25,13 +25,13 @@
 </script>
 <style scoped>
   .plugin-img {
-    height: 300px;
+    height: 200px;
   }
 
   .md-card {
     color: #fff;
     width: 100%;
-    margin: 0 60px;
+    margin: 0 20px;
     background: -webkit-linear-gradient(left top, rgb(62, 198, 152), rgb(55, 105, 190));
     cursor: pointer;
     transition: box-shadow .5s ease;

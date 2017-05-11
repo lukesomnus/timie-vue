@@ -1,65 +1,24 @@
 <template>
   <div class="root">
     <time-line>
-      <timeline-item>
+      <timeline-item v-for="birthday in birthdays" :key="birthday.id">
         <md-whiteframe md-elevation="4">
           <div class="birthday-card">
             <div class="birthday-card-header">
-              <div class="birthday-card-date">2015/6/5</div>
+              <div class="birthday-card-date">{{birthday.birthdayDate}} {{birthday.personName}}</div>
             </div>
             <div class="birthday-card-content">
               <div>
-                Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon
+                {{birthday.remark}}
               </div>
             </div>
           </div>
         </md-whiteframe>
       </timeline-item>
-      <timeline-item>
-        <md-whiteframe md-elevation="4">
-          <div class="birthday-card">
-            <div class="birthday-card-header">
-              <div class="birthday-card-date">2015/6/5</div>
-            </div>
-            <div class="birthday-card-content">
-              <div>
-                Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon
-              </div>
-            </div>
-          </div>
-        </md-whiteframe>
-      </timeline-item>
-      <timeline-item>
-        <md-whiteframe md-elevation="4">
-          <div class="birthday-card">
-            <div class="birthday-card-header">
-              <div class="birthday-card-date">2015/6/5</div>
-            </div>
-            <div class="birthday-card-content">
-              <div>
-                Voyager 1 launched from Kennedy Space Flight Center, Voyager 1 returns first spacecraft photo of Earth and Moon
-              </div>
-            </div>
-          </div>
-        </md-whiteframe>
       </timeline-item>
     </time-line>
   </div>
 </template>
-<script>
-  import {
-    TimeLine,
-    TimelineItem
-  } from '../tools/TimeLine'
-  export default {
-    name: 'birthday',
-    components: {
-      TimeLine,
-      TimelineItem
-    }
-  }
-
-</script>
 <style scoped>
   .root {
     margin: 0 100px;
@@ -85,3 +44,34 @@
   }
 
 </style>
+<script>
+  import {
+    TimeLine,
+    TimelineItem
+  } from '../tools/TimeLine'
+  import uuid from 'uuid';
+  export default {
+    name: 'birthday',
+    data() {
+      return {
+        birthdays: [{
+            id: uuid(),
+            birthdayDate: '5/11',
+            personName: '杨建明',
+            remark: '送他一个TT'
+          },
+          {
+            id: uuid(),
+            birthdayDate: '12/22',
+            personName: '周悦',
+            remark: '要买一份很有纪念意义的生日礼物'
+          }]
+      }
+    },
+    components: {
+      TimeLine,
+      TimelineItem
+    }
+  }
+
+</script>

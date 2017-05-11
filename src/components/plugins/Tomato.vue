@@ -1,5 +1,5 @@
 <template>
-  <md-whiteframe md-elevation="2" class="container">
+  <md-whiteframe md-elevation="4" class="container">
     <div class="header">
       <md-icon class="setting">add</md-icon>
       <md-icon class="list">list</md-icon>
@@ -9,7 +9,6 @@
         <div class="time-item" v-for="(word,index) in toMinutsText" :key="index">{{word}}</div>
     </div>
     <div class="control-area">
-
       <md-layout md-gutter class="control-play">
         <md-layout md-flex="33">
           <md-button class="md-icon-button md-primary">
@@ -92,6 +91,7 @@
     width: 300px;
     margin: 20px auto;
     padding-top: 10px;
+    background-color: #fff;
   }
 
   .header {

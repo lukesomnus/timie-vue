@@ -52,7 +52,6 @@
     <!--todo 四象限-->
     <div v-show="isTodoSquare">
       <md-layout md-gutter>
-
         <md-layout md-flex="50">
           <md-whiteframe md-elevation="4" class="todo-square todo-urgent-important ">
             <md-whiteframe md-elevation="1" class="todo-square-title">
@@ -71,21 +70,21 @@
         <md-layout md-flex="50">
           <md-whiteframe md-elevation="4" class="todo-square todo-noturgent-important">
             <md-whiteframe md-elevation="1" class="todo-square-title">
-              <div>重要但不紧急</div>
+              <div>紧急但不重要</div>
             </md-whiteframe>
           </md-whiteframe>
         </md-layout>
         <md-layout md-flex="50">
           <md-whiteframe md-elevation="4" class="todo-square todo-urgent-notimportant">
             <md-whiteframe md-elevation="1" class="todo-square-title">
-              <div>紧急且重要</div>
+              <div>重要但不紧急</div>
             </md-whiteframe>
           </md-whiteframe>
         </md-layout>
         <md-layout md-flex="50">
           <md-whiteframe md-elevation="4" class="todo-square todo-noturgent-notimportant">
             <md-whiteframe md-elevation="1" class="todo-square-title">
-              <div>重要但不紧急</div>
+              <div>不紧急且不重要</div>
             </md-whiteframe>
           </md-whiteframe>
         </md-layout>
