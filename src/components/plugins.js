@@ -34,7 +34,7 @@ const plugins = [{
   icon: 'book',
   desc: '图书清单',
   bgColor:{top:'#2E7FBF',bottom:'#986BAD'},
-  link: 'booklist'
+  link: 'bookList'
 }, {
   id: 6,
   name: 'Birthday Notebook',

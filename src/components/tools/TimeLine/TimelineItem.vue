@@ -37,7 +37,7 @@
     width: 10%;
     background-color: #8d94b1;
     margin-top: -2px;
-    z-index: -1;
+    z-index: 1;
   }
 
   .timeline-item {
@@ -54,6 +54,7 @@
 
   .timeline-item-station {
     position: absolute;
+    z-index: 100;
     background-color: #65adb7;
     left: 50%;
     margin-left: -30px;

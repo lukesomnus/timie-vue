@@ -2,30 +2,31 @@
   <md-whiteframe md-elevation="4">
     <div class="header">
       <div class="title">Timie</div>
-      <div class="nav">
-        <div class="nav-item">Home</div>
-        <div class="nav-item">Plugins</div>
-      </div>
+      <!--<header-nav></header-nav>-->
     </div>
   </md-whiteframe>
 </template>
 <script>
+  import HeaderNav from './HeaderNav'
   export default {
-    name: 'Header'
+    name: 'Header',
+    components: {
+      HeaderNav
+    }
   }
 
 </script>
 <style scoped>
   .header {
     background-color: #000;
-    color: #fff;    
+    color: #fff;
   }
 
   .title {
     text-align: center;
     font-size: 40px;
-    height: 150px;
-    line-height: 150px;
+    height: 100px;
+    line-height: 100px;
   }
 
   .nav {
