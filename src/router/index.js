@@ -9,6 +9,8 @@ import AnnualPlan from '@/components/plugins/AnnualPlan'
 import Birthday from '@/components/plugins/Birthday'
 import RememberCurve from '@/components/plugins/RememberCurve'
 import BookList from '@/components/plugins/BookList'
+import Random from '@/components/plugins/Random'
+import MarkDown from '@/components/plugins/MarkDown'
 Vue.use(Router)
 
 export default new Router({
@@ -55,6 +57,16 @@ export default new Router({
           path: 'bookList',
           name: 'bookList',
           component: BookList
+        },
+        {
+          path: 'random',
+          name: 'random',
+          component: Random
+        },
+        {
+          path: 'markdown',
+          name: 'markdown',
+          component: MarkDown
         }
       ]
     },

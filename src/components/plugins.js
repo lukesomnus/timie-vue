@@ -57,6 +57,6 @@ const plugins = [{
   icon: 'cached',
   desc: '帮你解决选择困难症',
   bgColor: {top:'#74D0F8',bottom:'#3A3377'},
-  link: 'rememberCurve'
+  link: 'random'
 }]
 export default plugins

@@ -11,7 +11,7 @@
     <!--todo 列表形式-->
     <div class="todo-list-table" v-show="!isTodoSquare">
       <div class="todo-group">
-        <transition-group name="todo-list">
+        <transition-group name="todo-list" mode="out-in">
           <md-whiteframe class="todo-item" md-elevation="1" v-for="todo in todoFilter" :key="todo.id" @mouseover.native="selectedOne=todo.id" @mouseout.native="selectedOne=''">
             <div class="todo-content">
               <md-checkbox id="my-test1" name="my-test1" v-model="todo.isCompleted" @change="completeTodo(todo.id,todo.isCompleted)"> {{todo.text}}</md-checkbox>
