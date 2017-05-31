@@ -194,7 +194,7 @@ export default {
   computed: {
     birthdayList() {
       // 排序
-      return this.birthdays.concat(importantFestivals).sort(compareFunc)
+      return this.birthdays.sort(compareFunc)
 
       // 排序规则
       function compareFunc(prev, cur) {
@@ -217,7 +217,6 @@ export default {
       this.$refs.rightSidenav.toggle();
     },
     saveSetting() {
-
       this.$refs.rightSidenav.close();
     },
   },

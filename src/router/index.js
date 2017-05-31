@@ -11,6 +11,7 @@ import RememberCurve from '@/components/plugins/RememberCurve'
 import BookList from '@/components/plugins/BookList'
 import Random from '@/components/plugins/Random'
 import MarkDown from '@/components/plugins/MarkDown'
+import Dashboard from '@/components/plugins/Dashboard'
 Vue.use(Router)
 
 export default new Router({
@@ -67,8 +68,14 @@ export default new Router({
           path: 'markdown',
           name: 'markdown',
           component: MarkDown
-        }
+        },
+
       ]
     },
+    {
+          path: '/dashboard',
+          name: 'dashboard',
+          component: Dashboard
+        }
   ]
 })

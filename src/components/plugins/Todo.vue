@@ -408,7 +408,8 @@ export default {
     }
   },
   created() {
-    this.todos = this.getTodos()
+    this.todos = this.getTodos() || []
+    console.log(this)
   },
   computed: {
     todoFilter() {
