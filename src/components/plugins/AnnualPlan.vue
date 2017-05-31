@@ -4,19 +4,19 @@
     </div>
     <md-whiteframe md-elevation="2" class="form-area">
       <md-layout md-gutter>
-        <md-layout md-flex="30" class="form-area-input">
+        <md-layout md-flex="25" class="form-area-input">
           <md-input-container>
             <md-input placeholder="计划名称" v-model="planContent"></md-input>
           </md-input-container>
         </md-layout>
-        <md-layout md-flex="30" class="form-area-input">
+        <md-layout md-flex="25" class="form-area-input">
           <date-picker :date="startTime">
             <md-input-container>
               <md-input placeholder="开始时间" v-model="startTime.time"></md-input>
             </md-input-container>
           </date-picker>
         </md-layout>
-        <md-layout md-flex="30" class="form-area-input">
+        <md-layout md-flex="25" class="form-area-input">
           <date-picker :date="endTime">
             <md-input-container>
               <md-input placeholder="截止时间" v-model="endTime.time"></md-input>
@@ -78,8 +78,8 @@
       </md-dialog-content>
 
       <md-dialog-actions>
-        <md-button class="md-primary" @click.native="closeDialog('cancel')">Cancel</md-button>
-        <md-button class="md-primary" @click.native="closeDialog('confirm')">Ok</md-button>
+        <md-button class="md-primary" @click.native="closeDialog('cancel')">取消</md-button>
+        <md-button class="md-primary" @click.native="closeDialog('confirm')">保存</md-button>
       </md-dialog-actions>
     </md-dialog>
 
