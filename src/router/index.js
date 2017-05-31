@@ -8,12 +8,13 @@ import Tomato from '@/components/plugins/Tomato'
 import AnnualPlan from '@/components/plugins/AnnualPlan'
 import Birthday from '@/components/plugins/Birthday'
 import RememberCurve from '@/components/plugins/RememberCurve'
-
+import BookList from '@/components/plugins/BookList'
+import Random from '@/components/plugins/Random'
+import MarkDown from '@/components/plugins/MarkDown'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'Home',
       component: Home
@@ -22,36 +23,50 @@ export default new Router({
       path: '/plugin',
       name: 'plugin',
       component: Plugin,
-      children:[
-        {
-          path:'todo',
-          name:'todo',
-          component:Todo
+      children: [{
+          path: 'todo',
+          name: 'todo',
+          component: Todo
         },
         {
-          path:'timenote',
-          name:'timenote',
-          component:TimeNote
+          path: 'timenote',
+          name: 'timenote',
+          component: TimeNote
         },
         {
-          path:'tomato',
-          name:'tomato',
-          component:Tomato
+          path: 'tomato',
+          name: 'tomato',
+          component: Tomato
         },
         {
-          path:'annualPlan',
-          name:'annualPlan',
-          component:AnnualPlan
+          path: 'annualPlan',
+          name: 'annualPlan',
+          component: AnnualPlan
         },
         {
-          path:'birthday',
-          name:'birthday',
-          component:Birthday
+          path: 'birthday',
+          name: 'birthday',
+          component: Birthday
         },
         {
-          path:'rememberCurve',
-          name:'rememberCurve',
-          component:RememberCurve
+          path: 'rememberCurve',
+          name: 'rememberCurve',
+          component: RememberCurve
+        },
+        {
+          path: 'bookList',
+          name: 'bookList',
+          component: BookList
+        },
+        {
+          path: 'random',
+          name: 'random',
+          component: Random
+        },
+        {
+          path: 'markdown',
+          name: 'markdown',
+          component: MarkDown
         }
       ]
     },

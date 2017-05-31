@@ -18,4 +18,11 @@ export default {
     background-color: #eee !important;
     overflow-x: hidden;
   }
+  .clearfix::after,.clearfix::before{
+    clear: both;
+    content: '';
+  }
+  .clearfix::after{
+    display: table;
+  }
 </style>

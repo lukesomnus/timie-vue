@@ -34,7 +34,7 @@ const plugins = [{
   icon: 'book',
   desc: '图书清单',
   bgColor:{top:'#2E7FBF',bottom:'#986BAD'},
-  link: 'booklist'
+  link: 'bookList'
 }, {
   id: 6,
   name: 'Birthday Notebook',
@@ -57,6 +57,6 @@ const plugins = [{
   icon: 'cached',
   desc: '帮你解决选择困难症',
   bgColor: {top:'#74D0F8',bottom:'#3A3377'},
-  link: 'rememberCurve'
+  link: 'random'
 }]
 export default plugins
