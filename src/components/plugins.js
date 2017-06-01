@@ -28,14 +28,16 @@ const plugins = [{
   desc: 'make splan for this year!',
   bgColor:{top:'#74D0F8',bottom:'#3A3377'},
   link: 'annualPlan'
-}, {
-  id: 5,
-  name: 'Book List',
-  icon: 'book',
-  desc: '图书清单',
-  bgColor:{top:'#2E7FBF',bottom:'#986BAD'},
-  link: 'bookList'
-}, {
+},
+//  {
+//   id: 5,
+//   name: 'Book List',
+//   icon: 'book',
+//   desc: '图书清单',
+//   bgColor:{top:'#2E7FBF',bottom:'#986BAD'},
+//   link: 'bookList'
+// },
+{
   id: 6,
   name: 'Birthday Notebook',
   icon: 'cake',
@@ -45,7 +47,7 @@ const plugins = [{
 },
 {
   id: 7,
-  name: '艾宾浩斯记忆曲线',
+  name: 'Memory Curve Line',
   icon: 'timeline',
   desc: '根据艾宾浩斯记忆曲线来复习知识',
   bgColor: {top:'#FFAE80',bottom:'#E15A84'},
