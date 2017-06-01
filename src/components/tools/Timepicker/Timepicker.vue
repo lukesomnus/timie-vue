@@ -377,6 +377,7 @@ table {
 <script>
 import moment from 'moment'
 export default {
+  name:'datePicker',
   props: {
     required: false,
     date: {

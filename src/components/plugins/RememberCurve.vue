@@ -2,7 +2,7 @@
   <div class="root">
     <md-layout md-gutter>
       <md-layout>
-        <md-input-container>
+        <md-input-container class="input-area">
           <md-input placeholder="计划名称" v-model="rememberContent"></md-input>
         </md-input-container>
       </md-layout>
@@ -232,7 +232,9 @@ function RemembersMerge(arr) {
 .root {
   padding-right: 20px;
 }
-
+.input-area{
+  margin-left: 20px;
+}
 .calendar {
   background-color: #fff;
   padding: 10px;
